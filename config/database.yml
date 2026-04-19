@@ -98,4 +98,4 @@ production:
   cache:
     <<: *primary_production
   queue:
-    <<: *primary_production
+    <<: *primary_productionA
