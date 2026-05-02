@@ -4,7 +4,7 @@ class Api::V1::JobsController < ApplicationController
     if params[:categories].present?
       jobs = jobs.where(category: params[:categories])
     end
-    
+
     if params[:min_salary].present?
       jobs = jobs.where("salary >= ?", params[:min_salary])
     end
@@ -14,7 +14,7 @@ class Api::V1::JobsController < ApplicationController
 
   def create
     job = Job.new(job_params)
-    if job.save 
+    if job.save
       render json: job, status: :created
     else
       render json: job.errors, status: :unprocessable_entity
@@ -27,4 +27,3 @@ class Api::V1::JobsController < ApplicationController
     params.require(:job).permit(:title, :category, :salary)
   end
 end
-
