@@ -14,7 +14,7 @@ test:
   <<: *default
   database: recruit_backend_rails_test
 
-production:
+production: 
   primary: &primary_production
     <<: *default
     url: <%= ENV['DATABASE_URL'] %>
