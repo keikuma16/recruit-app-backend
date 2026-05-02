@@ -15,14 +15,12 @@ test:
   database: recruit_backend_rails_test
 
 production: 
-  primary: &primary_production
+  primary: &primary
     <<: *default
     url: <%= ENV['DATABASE_URL'] %>
-
   cache:
     <<: *primary
   cable:
     <<: *primary
   queue:
     <<: *primary
-    <<: *primary_production
